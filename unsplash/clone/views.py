@@ -4,4 +4,4 @@ from .models import Post,collections,User
 def index(request):
     posts=Post.get_posts()
     print(len(posts))
-    return render(request,'index.html')
+    return render(request,'index.html',{"posts":posts})

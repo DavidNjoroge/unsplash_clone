@@ -36,9 +36,10 @@
 </div>
 <div class="container-fluid">
   <div class="row">
+    {% for post in posts %}
     <div class="col-md-4">
       <div class="view">
-        <img src="unsplash/brenda.jpg" class="imga" alt="">
+        <img src="{{post.image.url}}" class="imga" alt="">
         <div class="overlay center">
           <ul class="list-inline li_top">
             <li><a class="btn btn-default btn-sm " href="#"><span class="glyphicon glyphicon-heart"></span> 1000 </a></li>
@@ -54,22 +55,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <img src="unsplash/brooke-lark-96398.jpg" class="imga" alt="">
-
-    </div>
-    <div class="col-md-4">
-      <img src="unsplash/brenda.jpg" class="imga" alt="">
-
-    </div>
-    <div class="col-md-4">
-      <img src="unsplash/brenda.jpg" class="imga" alt="">
-
-    </div>
-    <div class="col-md-4">
-      <img src="unsplash/brenda.jpg" class="imga" alt="">
-
-    </div>
+    {% empty %}
+    <h2 class="text-centre"></h2> {% endfor %}
   </div>
 </div>
 {% endblock %}
