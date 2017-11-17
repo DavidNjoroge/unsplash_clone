@@ -18,3 +18,8 @@ class Post(models.Model):
     pub_date=models.DateTimeField(auto_now_add=True)
     user=models.ForeignKey(User)
     collection=models.ManyToManyField(collections)
+
+    @classmethod
+    def get_posts(cls):
+        posts=Post.objects.all()
+        return posts
