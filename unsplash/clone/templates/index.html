@@ -2,31 +2,13 @@
 
 <div class="container-fluid top">
   <div class="row">
+    {% for tag in tags %}
     <div class="col-md-1">
       <div class="tags">
-        <h4>landscape</h4>
+        <h4>{{tag}}</h4>
       </div>
     </div>
-    <div class="col-md-1">
-      <div class="tags">
-        <h4>landscape</h4>
-      </div>
-    </div>
-    <div class="col-md-1">
-      <div class="tags">
-        <h4>landscape</h4>
-      </div>
-    </div>
-    <div class="col-md-1">
-      <div class="tags">
-        <h4>landscape</h4>
-      </div>
-    </div>
-    <div class="col-md-1">
-      <div class="tags">
-        <h4>landscape</h4>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
 <div class="container-fluid header">
