@@ -1,0 +1,25 @@
+.search{
+  border-radius: 100px;
+  /*background-color: black;*/
+  width: 100px;
+}
+.lis{
+  font-size: 16px;
+}
+.tags{
+  background-color: pink;
+}
+.header{
+  padding-top: 25px;
+  padding-bottom:  25px;
+
+}
+.imga{
+  width: 100%;
+}
+.top{
+  margin-top: 50px;
+}
+nav{
+  background-color: white;
+}
