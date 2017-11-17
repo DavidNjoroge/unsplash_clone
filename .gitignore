@@ -1,2 +1,5 @@
 virtual/
-unsplash/
+temp
+*.pyc
+mk.html
+styless.css
