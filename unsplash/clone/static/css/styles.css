@@ -1,0 +1,57 @@
+.search{
+  border-radius: 100px;
+  /*background-color: black;*/
+  width: 100px;
+}
+.lis{
+  font-size: 16px;
+}
+.tags{
+  background-color: pink;
+}
+.header{
+  padding-top: 25px;
+  padding-bottom:  25px;
+
+}
+.imga{
+  width: 100%;
+}
+.top{
+  margin-top: 50px;
+}
+nav{
+  background-color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  /*background-color: #008CBA;*/
+}
+.view:hover .overlay {
+  opacity: 1;
+}
+.li_top{
+  text-align: right;
+}
+.li_btm{
+  float: right;
+}
+.dwn{
+  float: right;
+
+}
+.center{
+  padding: 50px;
+}
+.author{
+  color: white;
+}
