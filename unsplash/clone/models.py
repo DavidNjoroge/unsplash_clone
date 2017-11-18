@@ -1,4 +1,6 @@
 from django.db import models
+from itertools import chain
+
 
 # Create your models here.
 class collections(models.Model):
@@ -28,4 +30,14 @@ class Post(models.Model):
     @classmethod
     def get_posts(cls):
         posts=Post.objects.all()
+        return posts
+    @classmethod
+    def get_related(cls,post):
+        posts_list=[]
+        tags=post.collection.all()
+        for tag in tags:
+            qwerty=tag.post_set.all()
+            posts_list.append(qwerty)
+        posts=list(set(chain(*posts_list)))
+        # print(len(results))
         return posts
