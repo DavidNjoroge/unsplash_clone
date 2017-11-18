@@ -30,7 +30,7 @@ class Post(models.Model):
     @classmethod
     def get_posts(cls):
         posts=Post.objects.all()
-        return posts
+        return list(posts)
     @classmethod
     def get_related(cls,post):
         posts_list=[]
