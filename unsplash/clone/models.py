@@ -28,15 +28,20 @@ class Post(models.Model):
     collection=models.ManyToManyField(collections)
 
     @classmethod
-    def get_tag_posts(cls,tag):
-        post=tag.post_set.all()
+    def get_tag_posts(cls,tag_id):
+        # post=tag.post_set.all()
         # print(len(post))
-        return post
+        posts=Post.objects.filter(collection=tag_id)
+
+        post_par=Post.chunkIt(posts,3)
+        return post_par
 
     @classmethod
     def get_posts(cls):
         posts=Post.objects.all()
-        return list(posts)
+        post_par=Post.chunkIt(posts,3)
+
+        return post_par
     @classmethod
     def get_related(cls,post):
         posts_list=[]
@@ -45,5 +50,19 @@ class Post(models.Model):
             qwerty=tag.post_set.all()
             posts_list.append(qwerty)
         posts=list(set(chain(*posts_list)))
+        post_par=Post.chunkIt(posts,3)
+
         # print(len(results))
-        return posts
+        return post_par
+
+
+    @classmethod
+    def chunkIt(cls,seq, num):
+        avg = len(seq) / float(num)
+        out = []
+        last = 0.0
+
+        while last < len(seq):
+            out.append(seq[int(last):int(last + avg)])
+            last += avg
+        return out[::-1]
