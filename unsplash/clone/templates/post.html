@@ -47,27 +47,43 @@
 </div>
 <div class="container-fluid">
   <div class="row">
-    {% for post in posts %}
-    <div class="col-md-4">
-      <div class="view">
-        <img src="{{post.image.url}}" class="imga" alt="">
+    {% for post_col in posts %}
 
-        <div class="overlay center">
-          <ul class="list-inline li_top">
-            <li><a class="btn btn-default btn-sm " href="#"><span class="glyphicon glyphicon-heart"></span> 1000 </a></li>
-            <li><a class="btn btn-default btn-sm " href="#"><span class="glyphicon glyphicon-plus"></span>collect</a></li>
-            <!-- <p class="white-text">super light overlay</p> -->
-          </ul>
-          <ul class="list-inline dwn">
-            <li><a class="author" href="#">David mwangi</a></li>
-            <!-- <li><a href="#"></a></li> -->
-            <li><a class="btn btn-default btn-sm " href="#"><span class="glyphicon glyphicon-download-alt li_btm"></span></a></li>
+    <div class="col-md-4 col">
+      {% for post in post_col %}
+      <!-- <a href="#">qwertyuiopoiuytrew</a> -->
+      <div class="">
 
-          </ul>
+        <div class="view">
+          <img src="{{post.image.url}}" class="imga" alt="">
+
+          <div class="overlay center">
+            <!-- <div class=""> -->
+
+            <ul class="list-inline li_top">
+              <li><a class="btn btn-default btn-sm " href="#"><span class="glyphicon glyphicon-heart"></span> 1000 </a></li>
+              <li><a class="btn btn-default btn-sm " href="#"><span class="glyphicon glyphicon-plus"></span>collect</a></li>
+            </ul>
+            <div class="anchor">
+              <a href="{% url 'post' post.id %}">
+                fdgfdhfghfghfjh
+            </a>
+            </div>
+            <ul class="list-inline dwn">
+              <li><a class="author" href="#">David mwangi</a></li>
+              <li><a class="btn btn-default btn-sm " href="#"><span class="glyphicon glyphicon-download-alt li_btm"></span></a></li>
+
+            </ul>
+          </div>
         </div>
+        <!-- </a> -->
       </div>
+
+      {% empty %}
+      <h2 class="text-centre"></h2> {% endfor %}
     </div>
-    <h2 class="text-centre"></h2> {% endfor %}
+
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

@@ -48,6 +48,7 @@ nav{
 }
 .dwn{
   float: right;
+  margin-bottom:  100px;
 
 }
 .center{
@@ -70,4 +71,7 @@ nav{
 }
 .col{
   display: block;
+}
+.anchor{
+  height: inherit;
 }

@@ -28,6 +28,12 @@ class Post(models.Model):
     collection=models.ManyToManyField(collections)
 
     @classmethod
+    def get_tag_posts(cls,tag):
+        post=tag.post_set.all()
+        # print(len(post))
+        return post
+
+    @classmethod
     def get_posts(cls):
         posts=Post.objects.all()
         return list(posts)
