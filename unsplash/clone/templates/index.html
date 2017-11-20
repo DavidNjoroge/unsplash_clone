@@ -5,7 +5,10 @@
     {% for tag in tags %}
     <div class="col-md-1">
       <div class="tags">
-        <h4>{{tag}}</h4>
+
+        <a href="{% url 'tag' tag.id %}">
+          <h4>{{tag}}</h4>
+        </a>
       </div>
     </div>
     {% endfor %}

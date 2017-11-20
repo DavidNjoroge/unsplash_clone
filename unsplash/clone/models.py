@@ -44,17 +44,27 @@ class Post(models.Model):
         return post_par
     @classmethod
     def get_related(cls,post):
-        posts_list=[]
         tags=post.collection.all()
+        posts_list=[]
         for tag in tags:
             qwerty=tag.post_set.all()
             posts_list.append(qwerty)
         posts=list(set(chain(*posts_list)))
         post_par=Post.chunkIt(posts,3)
-
-        # print(len(results))
         return post_par
 
+    @classmethod
+    def search_by_tag(cls,search_term):
+        tags=collections.objects.filter(name__icontains=search_term)
+        # print(len(posts))
+        # publications__title__startswith="Science"
+        posts_list=[]
+        for tag in tags:
+            qwerty=tag.post_set.all()
+            posts_list.append(qwerty)
+        posts=list(set(chain(*posts_list)))
+        post_par=Post.chunkIt(posts,3)
+        return post_par
 
     @classmethod
     def chunkIt(cls,seq, num):

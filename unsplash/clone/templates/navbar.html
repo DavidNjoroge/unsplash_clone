@@ -14,10 +14,10 @@
           <span class="glyphicon glyphicon-camera"></span>
         </a>
       </div>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" action="{% url 'search_results' %}" role="search">
         <div class="form-group">
           <!-- <i class="form-control-feedback glyphicon glyphicon-search"></i> -->
-          <input type="text" class="form-control search" placeholder="Search">
+          <input type="text" name="search" class="form-control search" placeholder="Search">
         </div>
       </form>
       <div class="navbar-right">
