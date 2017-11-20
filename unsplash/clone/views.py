@@ -24,9 +24,9 @@ def tag(request,tag_id):
 
 
 def search(request):
-    if 'search' in request.GET and request.GET['search']:
+    if 'search' in request.GET and not request.GET['search']==None:
         search_term=request.GET['search']
         print(search_term)
         posts=Post.search_by_tag(search_term)
 
-    return render (request,'tag.html',{'posts':posts})
+    return render (request,'search.html',{'name':search_term,'posts':posts})
